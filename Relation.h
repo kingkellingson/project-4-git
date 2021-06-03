@@ -161,6 +161,64 @@ public:
         }
     }
 
+    Relation Join (Relation& toJoinWith)
+    {
+
+        Header joinedHeader = combineHeaders (myHeader, toJoinWith.getHeader());
+
+        string myName = "MyNewHeader";
+        Relation joinedRelation (myName, joinedHeader);
+
+        for (Tuple t1 : myTuples)
+        {
+            for (Tuple t2 : toJoinWith.GetSetOfTuples())
+            {
+                if (isJoinable(t1, t2))
+                {
+                    Tuple joinedTuple = combineTuples(t1, t2);
+                    joinedRelation.addTuple(joinedTuple);
+                }
+            }
+        }
+
+        return joinedRelation;
+
+        /*
+         * 	make the header h for the result relation
+	    (combine r1's header with r2's header)
+
+	make a new empty relation r using header h
+
+	for each tuple t1 in r1
+	    for each tuple t2 in r2
+
+		if t1 and t2 can join
+		    join t1 and t2 to make tuple t
+		    add tuple t to relation r
+		end if
+
+	    end for
+	end for
+         */
+    }
+
+    Header combineHeaders (Header h1, Header h2)
+    {
+        Header myHeader;
+        return myHeader;
+    }
+
+    bool isJoinable (Tuple T1, Tuple T2)
+    {
+        return true;
+    }
+
+    Tuple combineTuples (Tuple T1, Tuple T2)
+    {
+        Tuple myTuple;
+        return myTuple;
+    }
+
     int NumberTuples ()
     {
         return myTuples.size();

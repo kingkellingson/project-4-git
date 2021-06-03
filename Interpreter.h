@@ -86,7 +86,7 @@ public:
         FillFacts(); //Fills the Relations with Tuples
 
         myDatabase.toString();
-        unionWithDatabase();
+        joinWithDatabase();
         EvaluateRules();
 
         cout << endl << "-------------Queries Below----------------" << endl;
@@ -111,9 +111,9 @@ public:
         cout << endl << "Exited the Loop!";
     }
 
-    void unionWithDatabase () ///This is a Test
+    void joinWithDatabase () ///This is a Test
     {
-        /*cout << endl << "_________NOW TESTING UNION: Made my own relation_________";
+        cout << endl << "_________NOW TESTING Join: Made my own relation_________";
 
         Header header1;
         header1.addAttributeToHeader("C");
@@ -136,7 +136,7 @@ public:
         Relation myRelation1(toInsert, header1);
         myRelation1.addTuple(first);
         myRelation1.addTuple(second);
-        //myRelation1.toString();
+        myRelation1.toString();
 
         Header header2;
         header2.addAttributeToHeader("c");
@@ -150,13 +150,16 @@ public:
         //myRelation2.toString();
 
         Relation& UnionRelation = myDatabase.getMap().at("csg");
-        cout << endl << "_________Other relation to union with:_________";
-        //UnionRelation.toString();
-
-        UnionRelation.UnionTuplesFrom(myRelation1);
-        cout << endl << "_________After Union:_________";
+        cout << endl << "_________Other relation to join with:_________";
         UnionRelation.toString();
-        cout << endl << "Needs To rerun? Answer: " ;
+
+        //UnionRelation.UnionTuplesFrom(myRelation1);
+        cout << endl << "_________After join:_________";
+        UnionRelation.toString();
+
+
+
+        /*cout << endl << "Needs To rerun? Answer: " ;
         if (UnionRelation.getStatus())
         {
             cout << "Yes";
