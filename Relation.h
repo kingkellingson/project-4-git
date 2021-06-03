@@ -169,7 +169,7 @@ public:
         string myName = "MyNewHeader";
         Relation joinedRelation (myName, joinedHeader);
 
-        for (Tuple t1 : myTuples)
+        /*for (Tuple t1 : myTuples)
         {
             for (Tuple t2 : toJoinWith.GetSetOfTuples())
             {
@@ -179,7 +179,7 @@ public:
                     joinedRelation.addTuple(joinedTuple);
                 }
             }
-        }
+        }*/
 
         return joinedRelation;
 
@@ -205,6 +205,24 @@ public:
     Header combineHeaders (Header h1, Header h2)
     {
         Header myHeader;
+        vector<string> newAttributes = h1.getVector();
+
+        for (size_t i = 0; i < h2.getVector().size(); ++i) //go through every item in the second header
+        {
+            bool alreadyIn = false;
+            for (size_t j = 0; j < h1.getVector().size(); ++j) //go through every item in the first header (which was already added)
+            {
+                if (h2.getVector().at(i) == h1.getVector().at(j)) //if there is a match in any of the two headers
+                {
+                    alreadyIn = true; //then it is already in the header;
+                }
+            }
+            if (!alreadyIn) //if it is not already in the header
+            {
+                newAttributes.push_back(h2.getVector().at(i)); //then insert the item in the second header
+            }
+        }
+        myHeader.setVector(newAttributes); //set the final product of the attribute vector
         return myHeader;
     }
 

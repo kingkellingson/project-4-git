@@ -31,6 +31,11 @@ public:
         return attributes;
     }
 
+    void setVector (vector<string>& input)
+    {
+        attributes = input;
+    }
+
     void toString ()
     {
         for (size_t i = 0; i < attributes.size(); ++i)
