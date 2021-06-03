@@ -171,19 +171,6 @@ public:
 
         Header joinedHeader = combineHeaders (myHeader, toJoinWith.getHeader(), doCrossProduct, firstRelationMatches, secondRelationMatches);
 
-        ///This is a test for if the indecies of matches were found in the header
-//        cout << endl << "^^^^This is Testing the index vectors!^^^^";
-//        cout << endl << "Vector 1: ";
-//        for (int i : firstRelationMatches)
-//        {
-//            cout << i << " ";
-//        }
-//        cout << endl << "Vector 2: ";
-//        for (int i : secondRelationMatches)
-//        {
-//            cout << i << " ";
-//        }
-
         ///This is a test for if the Cross Product should be run
         if (doCrossProduct)
         {

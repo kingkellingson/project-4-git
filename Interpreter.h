@@ -85,11 +85,15 @@ public:
         CreateRelations(); //Creates the Database according to the Schemes
         FillFacts(); //Fills the Relations with Tuples
 
+        cout << endl << "-------------What's already inside----------------";
         myDatabase.toString();
-        joinWithDatabase();
+        //joinWithDatabase();
+
+        cout << endl << endl << "-------------Start Rules----------------";
+        cout << endl << "Rule Evaluation";
         EvaluateRules();
 
-        cout << endl << "-------------Queries Below----------------" << endl;
+        cout << endl << endl << "-------------Queries Below----------------" << endl;
         EvaluateQueries();
 
     }
@@ -97,9 +101,23 @@ public:
     void EvaluateRules ()
     {
         /** Does Fancy Rule Evaluation :) */
+        int numberOfPasses = 0;
         bool keepRunning;
         do
         {
+            ++numberOfPasses;
+            for (size_t i = 0; i < myProgramToInterpret.getRules().size(); ++i) //for every Rule in the program's Rule vector
+            {
+                if (i != 0)
+                {
+                    cout << endl;
+                }
+                //cout << "Rule Number: " << i+1;
+                myProgramToInterpret.getRules().at(i)->toString(); //Print out the Rule we are looking at.
+
+                EvaluateRule(*myProgramToInterpret.getRules().at(i));
+            }
+
             keepRunning = false;
 
             if (myDatabase.shouldContinue()) //if the Database finds a tuple added
@@ -108,7 +126,27 @@ public:
             }
         }
         while (keepRunning);
-        cout << endl << "Exited the Loop!";
+
+        cout << endl << endl << "Schemes populated after " << numberOfPasses << " passes through the Rules.";
+    }
+
+    void EvaluateRule (Rule& inputRule)
+    {
+        ///Step 1: Evaluate the RHS
+        vector<Relation> results;
+        for (size_t i = 0; i < inputRule.getPredicate().size(); ++i) //for every Predicate in the RHS of the Rule
+        {
+            Relation solutionRelation = EvaluatePredicate(*inputRule.getPredicate().at(i));
+            results.push_back(solutionRelation); //Push it back into the list of results
+        }
+
+        cout << endl << "            Each Predicate Solution            ";
+        for (Relation r : results)
+        {
+            r.toString();
+        }
+
+
     }
 
     void joinWithDatabase () ///This is a Test

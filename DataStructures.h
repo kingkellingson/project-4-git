@@ -88,6 +88,11 @@ public:
         }
     }
 
+    vector<Predicate*>& getPredicate ()
+    {
+        return myPredicates;
+    }
+
     void insertParameter (string toInsert)
     {
         myParameters.push_back(new Parameter(toInsert));
