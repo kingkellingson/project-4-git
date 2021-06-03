@@ -1,0 +1,150 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Automaton.h
+Token.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Token.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/BlockCommentAutomaton.h
+Automaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Automaton.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/DataStructures.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/IDAutomaton.h
+Automaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Automaton.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Interpreter.h
+vector
+-
+set
+-
+map
+-
+iterator
+-
+iostream
+-
+sstream
+-
+Token.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Token.h
+Tuple.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Tuple.h
+Relation.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Relation.h
+Parser.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Parser.h
+DataStructures.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/DataStructures.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Lexer.h
+vector
+-
+iostream
+-
+Automaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Automaton.h
+Token.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Token.h
+MatcherAutomaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/MatcherAutomaton.h
+StringAutomaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/StringAutomaton.h
+IDAutomaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/IDAutomaton.h
+LineCommentAutomaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/LineCommentAutomaton.h
+BlockCommentAutomaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/BlockCommentAutomaton.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/LineCommentAutomaton.h
+Automaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Automaton.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/MatcherAutomaton.h
+string
+-
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Parser.h
+vector
+-
+set
+-
+iterator
+-
+iostream
+-
+sstream
+-
+Token.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Token.h
+DataStructures.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/DataStructures.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Relation.h
+vector
+-
+set
+-
+iterator
+-
+iostream
+-
+sstream
+-
+string
+-
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/StringAutomaton.h
+Automaton.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Automaton.h
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Token.h
+string
+-
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Tuple.h
+vector
+-
+set
+-
+iterator
+-
+iostream
+-
+sstream
+-
+string
+-
+
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/main.cpp
+Lexer.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Lexer.h
+Parser.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Parser.h
+Interpreter.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Interpreter.h
+Token.h
+/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/Token.h
+iostream
+-
+istream
+-
+fstream
+-
+iostream
+-
+ostream
+-
+string
+-
+sstream
+-
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="project_0"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project-2">
+				<Option output="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/project-2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/users/guest/k/kyleje/project-2-git/."/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 project-2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project-2/fast">
+				<Option output="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/project-2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/users/guest/k/kyleje/project-2-git/."/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 project-2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/guest/k/kyleje/project-2-git/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/Automaton.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/BlockCommentAutomaton.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/IDAutomaton.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/Lexer.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/LineCommentAutomaton.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/MatcherAutomaton.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/StringAutomaton.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/Token.h">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/main.cpp">
+			<Option target="project-2"/>
+		</Unit>
+		<Unit filename="/users/guest/k/kyleje/project-2-git/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

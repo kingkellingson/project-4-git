@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" "/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/cmake-build-debug

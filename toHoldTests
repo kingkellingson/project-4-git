@@ -1,0 +1,42 @@
+cout << endl << "_________NOW TESTING_________";
+
+        Header header1;
+        header1.addAttributeToHeader("A");
+        header1.addAttributeToHeader("B");
+        header1.addAttributeToHeader("C");
+
+        Tuple first;
+        first.addValueToTuple("1");
+        first.addValueToTuple("2");
+        first.addValueToTuple("3");
+
+        Tuple second;
+        second.addValueToTuple("4");
+        second.addValueToTuple("5");
+        second.addValueToTuple("6");
+
+        string toInsert = "First Relation";
+        Relation myRelation1(toInsert, header1);
+        myRelation1.addTuple(first);
+        myRelation1.addTuple(second);
+        myRelation1.toString();
+
+        Header header2;
+        header2.addAttributeToHeader("D");
+        header2.addAttributeToHeader("E");
+        header2.addAttributeToHeader("F");
+
+        toInsert = "Second Relation";
+        Relation myRelation2(toInsert, header2);
+        myRelation2.addTuple(first);
+        myRelation2.addTuple(second);
+        myRelation2.toString();
+
+        cout << endl << "_________CREATE MY OWN DATABASE_________";
+
+        myDatabase.addRelationToMap(myRelation1);
+        myDatabase.addRelationToMap(myRelation2);
+        myDatabase.toString();
+
+
+
