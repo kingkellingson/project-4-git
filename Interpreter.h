@@ -116,9 +116,9 @@ public:
         cout << endl << "_________NOW TESTING Join: Made my own relation_________";
 
         Header header1;
+        header1.addAttributeToHeader("C");
+        header1.addAttributeToHeader("H");
         header1.addAttributeToHeader("W");
-        header1.addAttributeToHeader("S");
-        header1.addAttributeToHeader("M");
 
         Tuple first;
         first.addValueToTuple("\'CS101\'");
@@ -127,7 +127,7 @@ public:
         first.setHeader(header1);
 
         Tuple second;
-        second.addValueToTuple("\'CS236\'");
+        second.addValueToTuple("\'EE200\'");
         second.addValueToTuple("\'28282\'");
         second.addValueToTuple("\'a+\'");
         second.setHeader(header1);

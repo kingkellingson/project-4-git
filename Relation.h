@@ -164,57 +164,97 @@ public:
     Relation Join (Relation& toJoinWith)
     {
 
-        Header joinedHeader = combineHeaders (myHeader, toJoinWith.getHeader());
+        bool doCrossProduct = false;
+        ///These are the indexes where the columns of the two relations should match up
+        vector <int> firstRelationMatches;
+        vector <int> secondRelationMatches;
+
+        Header joinedHeader = combineHeaders (myHeader, toJoinWith.getHeader(), doCrossProduct, firstRelationMatches, secondRelationMatches);
+
+        ///This is a test for if the indecies of matches were found in the header
+//        cout << endl << "^^^^This is Testing the index vectors!^^^^";
+//        cout << endl << "Vector 1: ";
+//        for (int i : firstRelationMatches)
+//        {
+//            cout << i << " ";
+//        }
+//        cout << endl << "Vector 2: ";
+//        for (int i : secondRelationMatches)
+//        {
+//            cout << i << " ";
+//        }
+
+        ///This is a test for if the Cross Product should be run
+        if (doCrossProduct)
+        {
+            cout << endl << "$$$$$$$$$$$We're Doing Cross Product Now!$$$$$$$$$$$";
+        }
 
         string myName = "MyNewHeader";
         Relation joinedRelation (myName, joinedHeader);
 
-        /*for (Tuple t1 : myTuples)
+        for (Tuple t1 : myTuples)
         {
             for (Tuple t2 : toJoinWith.GetSetOfTuples())
             {
-                if (isJoinable(t1, t2))
+                if (isJoinable(t1,firstRelationMatches, t2, secondRelationMatches) || doCrossProduct)
                 {
-                    Tuple joinedTuple = combineTuples(t1, t2);
-                    joinedRelation.addTuple(joinedTuple);
+                    cout << endl << "*****Either CrossProduct or join the Tuples!******";
+//                    Tuple joinedTuple = combineTuples(t1, t2);
+//                    joinedRelation.addTuple(joinedTuple);
+                }
+                else
+                {
+                    cout << endl << "^^^^^Not possible to combine these Tuples :(^^^^^";
                 }
             }
-        }*/
+        }
 
         return joinedRelation;
-
-        /*
-         * 	make the header h for the result relation
-	    (combine r1's header with r2's header)
-
-	make a new empty relation r using header h
-
-	for each tuple t1 in r1
-	    for each tuple t2 in r2
-
-		if t1 and t2 can join
-		    join t1 and t2 to make tuple t
-		    add tuple t to relation r
-		end if
-
-	    end for
-	end for
-         */
     }
 
-    Header combineHeaders (Header h1, Header h2)
+    bool isJoinable (Tuple T1, vector<int>& index1, Tuple T2, vector<int>& index2)
+    {
+        bool isJoinable = true;
+        for (size_t i = 0; i < index1.size(); ++i)
+        {
+            ///This gets the values at the indexes where the two tuples should match
+            string value1 = T1.getVector().at(index1.at(i));
+            string value2 = T2.getVector().at(index2.at(i));
+            if (value1 == value2) {continue;} //if the two values are equal, continue checking //FIXME: Potential error here with the if else
+            else
+            {
+                isJoinable = false; //if not, then you cannot join the tuples
+            }
+        }
+        return isJoinable;
+    }
+
+    Tuple combineTuples (Tuple T1, Tuple T2)
+    {
+        Tuple myTuple;
+        return myTuple;
+    }
+
+    Header combineHeaders (Header h1, Header h2, bool& doCrossProduct, vector<int>& relation1, vector<int>& relation2)
     {
         Header myHeader;
         vector<string> newAttributes = h1.getVector();
+        doCrossProduct = true; //I'm going to assume that I'll be doing a cross product unless the bool gets changed
+                                // (i.e. something in header2 was already in the header1, meaning that there was overlap)
 
-        for (size_t i = 0; i < h2.getVector().size(); ++i) //go through every item in the second header
+        for (size_t i = 0; i < h2.getVector().size(); ++i) //go through every item in the SECOND header
         {
             bool alreadyIn = false;
-            for (size_t j = 0; j < h1.getVector().size(); ++j) //go through every item in the first header (which was already added)
+            for (size_t j = 0; j < h1.getVector().size(); ++j) //go through every item in the FIRST header (which was already added)
             {
                 if (h2.getVector().at(i) == h1.getVector().at(j)) //if there is a match in any of the two headers
                 {
                     alreadyIn = true; //then it is already in the header;
+                    doCrossProduct = false;
+                    ///found the column where there should be a match, so adding it to both vectors
+                    relation1.push_back(j);
+                    relation2.push_back(i);
                 }
             }
             if (!alreadyIn) //if it is not already in the header
@@ -224,17 +264,6 @@ public:
         }
         myHeader.setVector(newAttributes); //set the final product of the attribute vector
         return myHeader;
-    }
-
-    bool isJoinable (Tuple T1, Tuple T2)
-    {
-        return true;
-    }
-
-    Tuple combineTuples (Tuple T1, Tuple T2)
-    {
-        Tuple myTuple;
-        return myTuple;
     }
 
     int NumberTuples ()
