@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git
+# Install script for directory: /Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

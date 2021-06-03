@@ -19,8 +19,24 @@ private:
     string name;
     Header myHeader;
     set<Tuple> myTuples;
+    bool needsToRerun = false;
 public:
     Relation (string& n, Header& h) : name(n), myHeader(h) {}
+
+    string getName ()
+    {
+        return name;
+    }
+
+    bool getStatus ()
+    {
+        return needsToRerun;
+    }
+
+    void resetStatus ()
+    {
+        needsToRerun = false;
+    }
 
     void addTuple (Tuple tupleToAdd)
     {
@@ -35,6 +51,11 @@ public:
     void SetSetOfTuples (set<Tuple> input)
     {
         myTuples = input;
+    }
+
+    set<Tuple> GetSetOfTuples ()
+    {
+        return myTuples;
     }
 
     Relation ConstantSelect (string toMatch, size_t index)
@@ -123,9 +144,21 @@ public:
         return *this;
     }
 
-    string getName ()
+    void UnionTuplesFrom (Relation& inputRelation)
     {
-        return name;
+        if (myHeader.getVector() != inputRelation.getHeader().getVector())
+        {
+            cout << "ERROR: The two Relations do not have matching Headers!";
+        }
+
+        for (Tuple t : inputRelation.GetSetOfTuples()) //for every Tuple in the passed set of tuples
+        {
+            if(myTuples.insert(t).second) //inserts it into the parent set of Tuples and checks to see if it was unique
+            {
+                t.toString();
+                needsToRerun = true;
+            }
+        }
     }
 
     int NumberTuples ()

@@ -35,11 +35,34 @@ public:
         return myRelations;
     }
 
+    bool shouldContinue ()
+    {
+        bool keepRunning = false;
+        for (map<string, Relation>::iterator it = myRelations.begin(); it != myRelations.end(); it++)//for every relation in the map
+        {
+            if (it->second.getStatus()) { //if it finds a relation that has a tuple added
+                cout << endl << "It should keep running!";
+                keepRunning = true; //that means it should keep running
+                boolReset(); //resets all the relations back to their initial value of false
+                break;
+            }
+        }
+        return keepRunning;
+    }
+
+    void boolReset ()
+    {
+        for (map<string, Relation>::iterator it = myRelations.begin(); it != myRelations.end(); it++)//for every relation in the map
+        {
+            it->second.resetStatus(); //Reset all the keepRunning members to false
+        }
+    }
+
     void toString ()
     {
-        for (map<string, Relation>::iterator it = myRelations.begin(); it != myRelations.end(); it++)
+        for (map<string, Relation>::iterator it = myRelations.begin(); it != myRelations.end(); it++)//for every relation in the map
         {
-            cout << endl << endl << "MY RELATION:";
+            cout << endl << endl << "MY RELATION: " << it->second.getName();
             it->second.toString();
         }
     }
@@ -62,8 +85,84 @@ public:
         CreateRelations(); //Creates the Database according to the Schemes
         FillFacts(); //Fills the Relations with Tuples
 
+        myDatabase.toString();
+        unionWithDatabase();
+        EvaluateRules();
+
+        cout << endl << "-------------Queries Below----------------" << endl;
         EvaluateQueries();
-        //myDatabase.toString();
+
+    }
+
+    void EvaluateRules ()
+    {
+        /** Does Fancy Rule Evaluation :) */
+        bool keepRunning;
+        do
+        {
+            keepRunning = false;
+
+            if (myDatabase.shouldContinue()) //if the Database finds a tuple added
+            {
+                keepRunning = true; //it will continue the loop
+            }
+        }
+        while (keepRunning);
+        cout << endl << "Exited the Loop!";
+    }
+
+    void unionWithDatabase () ///This is a Test
+    {
+        /*cout << endl << "_________NOW TESTING UNION: Made my own relation_________";
+
+        Header header1;
+        header1.addAttributeToHeader("C");
+        header1.addAttributeToHeader("S");
+        header1.addAttributeToHeader("G");
+
+        Tuple first;
+        first.addValueToTuple("\'CS101\'");
+        first.addValueToTuple("\'12345\'");
+        first.addValueToTuple("\'A\'");
+        first.setHeader(header1);
+
+        Tuple second;
+        second.addValueToTuple("\'CS236\'");
+        second.addValueToTuple("\'28282\'");
+        second.addValueToTuple("\'a+\'");
+        second.setHeader(header1);
+
+        string toInsert = "First Relation";
+        Relation myRelation1(toInsert, header1);
+        myRelation1.addTuple(first);
+        myRelation1.addTuple(second);
+        //myRelation1.toString();
+
+        Header header2;
+        header2.addAttributeToHeader("c");
+        header2.addAttributeToHeader("s");
+        header2.addAttributeToHeader("g");
+
+        toInsert = "Second Relation";
+        Relation myRelation2(toInsert, header2);
+        myRelation2.addTuple(first);
+        myRelation2.addTuple(second);
+        //myRelation2.toString();
+
+        Relation& UnionRelation = myDatabase.getMap().at("csg");
+        cout << endl << "_________Other relation to union with:_________";
+        //UnionRelation.toString();
+
+        UnionRelation.UnionTuplesFrom(myRelation1);
+        cout << endl << "_________After Union:_________";
+        UnionRelation.toString();
+        cout << endl << "Needs To rerun? Answer: " ;
+        if (UnionRelation.getStatus())
+        {
+            cout << "Yes";
+        }
+        else { cout << "No";}*/
+
     }
 
     Relation EvaluatePredicate(Predicate predicate)

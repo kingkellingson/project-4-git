@@ -64,10 +64,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git"
+CMAKE_SOURCE_DIR = "/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git/cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -94,14 +94,14 @@ clean: CMakeFiles/project-2.dir/clean
 CMakeFiles/project-2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-2.dir/build.make CMakeFiles/project-2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-2.dir/build.make CMakeFiles/project-2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target project-2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target project-2"
 .PHONY : CMakeFiles/project-2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/project-2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git/cmake-build-debug/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/project-2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/project-2.dir/rule
 
 # Convenience name for target.

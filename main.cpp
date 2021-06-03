@@ -60,6 +60,6 @@ int main(int argc, char* argv[]) {
     delete lexer;
     delete parser;
     delete interpreter;
-    //cout << endl << ;"End of Program!"
+    cout << endl << "End of Program!";
     return 0;
 }

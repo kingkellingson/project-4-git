@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sd
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/Users/kyleje/Desktop/CLionProjects/project-3 (not git)/project-3-git/." 
+CXX_INCLUDES = -I"/Users/kyleje/Desktop/CLionProjects/project-4 (not git)/project-4-git/." 
 
