@@ -97,6 +97,11 @@ public:
         return values;
     }
 
+    void setVector (vector<string>& input)
+    {
+        values = input;
+    }
+
     void addValueToTuple (string valueToAdd)
     {
         values.push_back(valueToAdd);

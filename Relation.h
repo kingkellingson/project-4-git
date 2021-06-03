@@ -199,13 +199,15 @@ public:
             {
                 if (isJoinable(t1,firstRelationMatches, t2, secondRelationMatches) || doCrossProduct)
                 {
-                    cout << endl << "*****Either CrossProduct or join the Tuples!******";
-//                    Tuple joinedTuple = combineTuples(t1, t2);
-//                    joinedRelation.addTuple(joinedTuple);
+                    ///Perhaps adding a if statement for when a cross product should be done?
+                    //cout << endl << "*****Either CrossProduct or join the Tuples!******";
+                    Tuple joinedTuple = combineTuples(t1, t2, secondRelationMatches);
+                    joinedTuple.setHeader(joinedHeader);
+                    joinedRelation.addTuple(joinedTuple);
                 }
                 else
                 {
-                    cout << endl << "^^^^^Not possible to combine these Tuples :(^^^^^";
+                    //cout << endl << "^^^^^Not possible to combine these Tuples :(^^^^^";
                 }
             }
         }
@@ -230,9 +232,32 @@ public:
         return isJoinable;
     }
 
-    Tuple combineTuples (Tuple T1, Tuple T2)
+    Tuple combineTuples (Tuple T1, Tuple T2, vector<int>& indexToSkip)
     {
         Tuple myTuple;
+        vector<string> newValues = T1.getVector(); //dump in all the values from the first tuple's vector of values
+
+        for (size_t i = 0; i < T2.getVector().size(); ++i) //go through every item in the SECOND tuple
+        {
+            ///This just all checks to see if it should be skipped (i.e. we should add something else
+            bool skip = false;
+            for (size_t j = 0; j < indexToSkip.size(); ++j)
+            {
+                if (i == indexToSkip.at(j)) // if the current collumn is also one of the columns to skip
+                {
+                    skip = true;
+                }
+            }
+            if (skip) //if this index should be skipped
+            {
+                skip = false; //reset back to false
+                continue; //then goe onto the next iteration.
+            }
+
+            newValues.push_back(T2.getVector().at(i)); //then insert the item in the second tuple
+        }
+        myTuple.setVector(newValues); //set the final product of the value vector
+
         return myTuple;
     }
 

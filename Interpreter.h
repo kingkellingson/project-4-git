@@ -117,8 +117,8 @@ public:
 
         Header header1;
         header1.addAttributeToHeader("C");
-        header1.addAttributeToHeader("H");
-        header1.addAttributeToHeader("W");
+        header1.addAttributeToHeader("S");
+        header1.addAttributeToHeader("G");
 
         Tuple first;
         first.addValueToTuple("\'CS101\'");
@@ -129,16 +129,16 @@ public:
         Tuple second;
         second.addValueToTuple("\'EE200\'");
         second.addValueToTuple("\'28282\'");
-        second.addValueToTuple("\'a+\'");
+        second.addValueToTuple("\'B\'");
         second.setHeader(header1);
 
         string toInsert = "First Relation";
         Relation myRelation1(toInsert, header1);
         myRelation1.addTuple(first);
         myRelation1.addTuple(second);
-        //myRelation1.toString();
-        cout << endl << "_________Print Created Relation's Header_________"<< endl;
-        myRelation1.getHeader().toString();
+        myRelation1.toString();
+        //cout << endl << "_________Print Created Relation's Header_________"<< endl;
+        //myRelation1.getHeader().toString();
 
         Header header2;
         header2.addAttributeToHeader("c");
@@ -152,13 +152,13 @@ public:
         //myRelation2.toString();
 
         Relation& UnionRelation = myDatabase.getMap().at("csg");
-        cout << endl << "_________Other relation's header to join with:_________" << endl;
-        //UnionRelation.toString();
-        UnionRelation.getHeader().toString();
+        cout << endl << "_________Other relation to join with:_________" << endl;
+        UnionRelation.toString();
+        //UnionRelation.getHeader().toString();
 
         UnionRelation = UnionRelation.Join(myRelation1);
         cout << endl << "_________After join:_________"<< endl;
-        UnionRelation.getHeader().toString();
+        UnionRelation.toString();
 
 
 
