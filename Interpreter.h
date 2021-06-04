@@ -41,7 +41,7 @@ public:
         for (map<string, Relation>::iterator it = myRelations.begin(); it != myRelations.end(); it++)//for every relation in the map
         {
             if (it->second.getStatus()) { //if it finds a relation that has a tuple added
-                cout << endl << "It should keep running!";
+                //cout << endl << "It should keep running!";
                 keepRunning = true; //that means it should keep running
                 boolReset(); //resets all the relations back to their initial value of false
                 break;
@@ -85,15 +85,17 @@ public:
         CreateRelations(); //Creates the Database according to the Schemes
         FillFacts(); //Fills the Relations with Tuples
 
-        cout << endl << "-------------What's already inside----------------";
-        myDatabase.toString();
+        //cout << endl << "-------------What's already inside----------------";
+        //myDatabase.toString();
+        ///this is a function to test
         //joinWithDatabase();
 
-        cout << endl << endl << "-------------Start Rules----------------";
-        cout << endl << "Rule Evaluation";
+        //cout << endl << endl << "-------------Start Rules----------------";
+        cout << "Rule Evaluation";
         EvaluateRules();
 
-        cout << endl << endl << "-------------Queries Below----------------" << endl;
+        //cout << endl << endl << "-------------Queries Below----------------" << endl;
+        cout << endl << endl << "Rule Evaluation";
         EvaluateQueries();
 
     }
@@ -108,10 +110,10 @@ public:
             ++numberOfPasses;
             for (size_t i = 0; i < myProgramToInterpret.getRules().size(); ++i) //for every Rule in the program's Rule vector
             {
-                if (i != 0)
-                {
-                    cout << endl;
-                }
+//                if (i != 0)
+//                {
+//                    cout << endl;
+//                }
                 //cout << "Rule Number: " << i+1;
                 myProgramToInterpret.getRules().at(i)->toString(); //Print out the Rule we are looking at.
 
@@ -141,10 +143,10 @@ public:
         }
 
         //cout << endl << "            Each Predicate Solution            ";
-        for (Relation r : results)
-        {
-            r.toString();
-        }
+//        for (Relation r : results)
+//        {
+//            r.toString();
+//        }
 
         ///Step 2: Join them all together
         Relation joinedResult = results.front();
@@ -152,10 +154,10 @@ public:
         {
             for (size_t i = 0; i < results.size()-1; ++i) // for every relation in the results (except the last one)
             {
-                cout << endl << "We joined two relations!";
+                //cout << endl << "We joined two relations!";
                 joinedResult = joinedResult.Join(results.at(i+1));
-                cout << endl << "Result after Join:";
-                joinedResult.toString();
+                //cout << endl << "Result after Join:";
+                //joinedResult.toString();
             }
         }
 
@@ -172,8 +174,8 @@ public:
         indexesToMatch = joinedResult.FindMatchingIndexVector(parametersToMatch); //get the indexes needed for the project
         joinedResult.Project(indexesToMatch); //do the project with the given indexes
 
-        cout << endl << "Result after Project:";
-        joinedResult.toString();
+        //cout << endl << "Result after Project:";
+        //joinedResult.toString();
 
         ///Step 4: Rename to match the corresponding scheme
         //FIXME: Could be inefficient?
@@ -182,14 +184,14 @@ public:
         vector<string> desiredStringVector = desiredHeader.getVector(); //makes a vector of strings out of it
         joinedResult.Rename(desiredStringVector);
 
-        cout << endl << "Result after Rename:";
-        joinedResult.toString();
+        //cout << endl << "Result after Rename:";
+        //joinedResult.toString();
 
         ///Step 5: Union with Database
         Relation& databaseRelation = myDatabase.getMap().at(currentScheme);
         databaseRelation.UnionTuplesFrom(joinedResult);
-        cout << endl << "Database Result after Union:";
-        databaseRelation.toString();
+        //cout << endl << "Database Result after Union:";
+        //databaseRelation.toString();
     }
 
     void joinWithDatabase () ///This is a Test

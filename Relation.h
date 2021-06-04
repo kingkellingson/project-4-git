@@ -156,7 +156,7 @@ public:
         {
             if(myTuples.insert(t).second) //inserts it into the parent set of Tuples and checks to see if it was unique
             {
-                //t.toString();
+                t.toString();
                 needsToRerun = true;
             }
         }
