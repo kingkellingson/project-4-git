@@ -140,12 +140,24 @@ public:
             results.push_back(solutionRelation); //Push it back into the list of results
         }
 
-        cout << endl << "            Each Predicate Solution            ";
+        //cout << endl << "            Each Predicate Solution            ";
         for (Relation r : results)
         {
             r.toString();
         }
 
+        ///Step 2: Join them all together
+        if (results.size() > 1) //if we need to join two or more relations (i.e. there is more than one relation)
+        {
+            Relation joinedResult = results.front();
+            for (size_t i = 0; i < results.size()-1; ++i) // for every relation in the results (except the last one)
+            {
+                cout << endl << "We joined two relations!";
+                joinedResult = joinedResult.Join(results.at(i+1));
+                cout << endl << "Result after Join:";
+                joinedResult.toString();
+            }
+        }
 
     }
 

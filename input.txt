@@ -1,23 +1,31 @@
+# COPYRIGHT © BRIGHAM YOUNG UNIVERSITY CS 236
+# FOR USE ONLY DURING SPRING 2021 SEMESTER
 Schemes:
-  snap(S,N,A,P)
-  csg(C,S,G)
-  cn(C,N)
-  ncg(N,C,G)
+   A(a)
+   B(b)
+   DeaUoo(a,b,c,d,e)
+   DeaVoo(a,b,c,d,e)
+   DeaWoo(a,b,c,d,e)
 
 Facts:
-  snap('12345','C. Brown','12 Apple St.','555-1234').
-  snap('22222','P. Patty','56 Grape Blvd','555-9999').
-  snap('33333','Snoopy','12 Apple St.','555-1234').
-  csg('CS101','12345','A').
-  csg('CS101','22222','B').
-  csg('CS101','33333','C').
-  csg('EE200','12345','B+').
-  csg('EE200','22222','B').
+   A('a').
+   B('b').
+   DeaWoo('a','a','a','a','b').
+   DeaWoo('a','b','a','a','b').
 
 Rules:
-  cn(c,n) :- snap(S,n,A,P),csg(c,S,G).
-  ncg(n,c,g) :- snap(S,n,A,P),csg(c,S,g).
+   DeaWoo(A,B,C,D,E):-A(A),A(B),A(C),A(D),A(E).
+   DeaWoo(A,B,C,D,E):-A(A),A(B),B(C),A(D),A(E).
+   DeaUoo(E,D,C,B,A):-DeaWoo(E,D,C,B,A),A(B).
+   DeaVoo(E,D,C,B,A):-DeaUoo(E,D,C,B,A),B(D).
 
 Queries:
-  cn('CS101',Name)?
-  ncg('Snoopy',Course,Grade)?
+   DeaUoo(A,B,C,D,E)? 
+   DeaUoo(A,B,'a',D,E)?
+   DeaVoo(A,B,C,D,E)?
+   DeaVoo(A,B,'a',D,E)?
+   DeaUoo(A,B,'b',D,E)?
+   DeaWoo(A,B,'a',D,Applestrudle)?
+   DeaWoo(A,B,'a',D,E)?
+   DeaWoo(A,B,C,D,E)?
+   DeaWoo('a','a','a','a','b')?

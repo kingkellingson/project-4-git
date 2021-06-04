@@ -68,7 +68,7 @@ public:
     Rule(string s) : description(s) {}
     void toString ()
     {
-        cout << endl << "  " << description;
+        cout << endl << description << "(";
         for (size_t i = 0; i < myParameters.size(); ++i)
         {
             if (i != 0 )
