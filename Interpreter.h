@@ -95,7 +95,7 @@ public:
         EvaluateRules();
 
         //cout << endl << endl << "-------------Queries Below----------------" << endl;
-        cout << endl << endl << "Rule Evaluation";
+        cout << endl << endl << "Query Evaluation" << endl;
         EvaluateQueries();
 
     }

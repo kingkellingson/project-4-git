@@ -172,11 +172,11 @@ public:
 
         Header joinedHeader = combineHeaders (myHeader, toJoinWith.getHeader(), doCrossProduct, firstRelationMatches, secondRelationMatches);
 
-        ///This is a test for if the Cross Product should be run
-        if (doCrossProduct)
-        {
-            cout << endl << "$$$$$$$$$$$We're Doing Cross Product Now!$$$$$$$$$$$";
-        }
+//        ///This is a test for if the Cross Product should be run
+//        if (doCrossProduct)
+//        {
+//            cout << endl << "$$$$$$$$$$$We're Doing Cross Product Now!$$$$$$$$$$$";
+//        }
 
         string myName = "MyNewHeader";
         Relation joinedRelation (myName, joinedHeader);
@@ -231,7 +231,8 @@ public:
             bool skip = false;
             for (size_t j = 0; j < indexToSkip.size(); ++j)
             {
-                if (i == indexToSkip.at(j)) // if the current collumn is also one of the columns to skip
+                int column = i;
+                if (column == indexToSkip.at(j)) // if the current collumn is also one of the columns to skip
                 {
                     skip = true;
                 }
@@ -310,6 +311,10 @@ public:
     {
         for (Tuple t : myTuples)
         {
+            if (t.getVector().size()==0)
+            {
+                continue;
+            }
             t.toString();
         }
     }

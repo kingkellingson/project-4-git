@@ -86,6 +86,7 @@ public:
             }
             myPredicates.at(i)->toString();
         }
+        cout << ".";
     }
 
     string getDescription ()
