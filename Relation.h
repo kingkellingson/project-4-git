@@ -278,6 +278,23 @@ public:
         return myHeader;
     }
 
+    vector<int> FindMatchingIndexVector (vector<string>& stringsToMatch)
+    {
+        vector<int> indexesToSave;
+        for (size_t i = 0; i < stringsToMatch.size(); ++i) // for every string in the strings to match
+        {
+            for (size_t j = 0; j < myHeader.getVector().size(); ++j) //go through every string in the relation's header
+            {
+                if (stringsToMatch.at(i) == myHeader.getVector().at(j)) //if they match
+                {
+                    indexesToSave.push_back(j); //add that index to the indexes needed to save
+                    break;
+                }
+            }
+        }
+        return indexesToSave;
+    }
+
     int NumberTuples ()
     {
         return myTuples.size();

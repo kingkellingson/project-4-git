@@ -98,7 +98,7 @@ public:
 
     }
 
-    void EvaluateRules ()
+    void EvaluateRules () ///Fixed Point Algorithm
     {
         /** Does Fancy Rule Evaluation :) */
         int numberOfPasses = 0;
@@ -147,9 +147,9 @@ public:
         }
 
         ///Step 2: Join them all together
+        Relation joinedResult = results.front();
         if (results.size() > 1) //if we need to join two or more relations (i.e. there is more than one relation)
         {
-            Relation joinedResult = results.front();
             for (size_t i = 0; i < results.size()-1; ++i) // for every relation in the results (except the last one)
             {
                 cout << endl << "We joined two relations!";
@@ -159,6 +159,21 @@ public:
             }
         }
 
+        ///Step 3: Project just the columns that are union worthy
+        vector<string> parametersToMatch;
+        vector<int> indexesToMatch;
+        for (size_t i = 0; i < inputRule.getHeadParameters().size(); ++i) //for every parameter in the head predicate
+        {
+            string input;
+            input = inputRule.getHeadParameters().at(i)->getDescription(); //get that parameter's description
+            parametersToMatch.push_back(input);                               //and place it into the vector of strings
+        }
+
+        indexesToMatch = joinedResult.FindMatchingIndexVector(parametersToMatch); //get the indexes needed for the project
+        joinedResult.Project(indexesToMatch); //do the project with the given indexes
+
+        cout << endl << "Result after Project:";
+        joinedResult.toString();
     }
 
     void joinWithDatabase () ///This is a Test
