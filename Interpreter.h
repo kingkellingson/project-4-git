@@ -174,6 +174,22 @@ public:
 
         cout << endl << "Result after Project:";
         joinedResult.toString();
+
+        ///Step 4: Rename to match the corresponding scheme
+        //FIXME: Could be inefficient?
+        string currentScheme = inputRule.getDescription(); //gets the name of this rule
+        Header desiredHeader = myDatabase.getMap().at(currentScheme).getHeader(); //finds the corresponding Header
+        vector<string> desiredStringVector = desiredHeader.getVector(); //makes a vector of strings out of it
+        joinedResult.Rename(desiredStringVector);
+
+        cout << endl << "Result after Rename:";
+        joinedResult.toString();
+
+        ///Step 5: Union with Database
+        Relation& databaseRelation = myDatabase.getMap().at(currentScheme);
+        databaseRelation.UnionTuplesFrom(joinedResult);
+        cout << endl << "Database Result after Union:";
+        databaseRelation.toString();
     }
 
     void joinWithDatabase () ///This is a Test

@@ -149,13 +149,14 @@ public:
         if (myHeader.getVector() != inputRelation.getHeader().getVector())
         {
             cout << "ERROR: The two Relations do not have matching Headers!";
+            return;
         }
 
         for (Tuple t : inputRelation.GetSetOfTuples()) //for every Tuple in the passed set of tuples
         {
             if(myTuples.insert(t).second) //inserts it into the parent set of Tuples and checks to see if it was unique
             {
-                t.toString();
+                //t.toString();
                 needsToRerun = true;
             }
         }

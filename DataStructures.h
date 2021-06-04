@@ -88,6 +88,11 @@ public:
         }
     }
 
+    string getDescription ()
+    {
+        return description;
+    }
+
     vector<Predicate*>& getPredicate ()
     {
         return myPredicates;
